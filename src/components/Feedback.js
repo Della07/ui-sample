@@ -59,7 +59,7 @@ class Feedback extends Component {
                       <small className="text-muted">Not at all satisfied</small>
                     </Col>
                     <Col className="col-6">
-                      <Form.Row className="rbg">
+                      <Form.Row className="rbg mx-auto">
                         <div key={`inline-radio`} className="p-2">
                           <Form.Check
                             inline
