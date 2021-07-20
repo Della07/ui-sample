@@ -219,10 +219,13 @@ class Feedback extends Component {
                       <Form.Control type="email" placeholder="me@email.com" />
                     </Form.Group>
                   </Form>
-                  <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Upload File</Form.Label>
-                    <Form.Control type="file" multiple />
-                  </Form.Group>
+                  <Form action="" method="post" enctype="multipart/form-data">
+                    <Form.Group controlId="formFile" className="mb-3">
+                      <Form.Label>Upload File</Form.Label>
+                      <Form.Control type="file" />
+                    </Form.Group>
+                  </Form>
+
                   <Alert variant="secondary" className="p-3 mt-5">
                     <Row>
                       <Col className="text-left my-auto col-12 col-md-5 ">
@@ -247,7 +250,7 @@ class Feedback extends Component {
                       </Col>
                     </Row>
                   </Alert>
-                  <Button variant="primary" size="lg" active>
+                  <Button variant="primary" size="lg" active type="submit">
                     Submit Feedback
                   </Button>
                 </Col>
