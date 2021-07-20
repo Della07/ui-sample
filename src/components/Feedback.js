@@ -305,8 +305,8 @@ class Feedback extends Component {
                       //   }
                       // );
                       return axios({
-                        method: "post",
-                        url: "myurl",
+                        method: "put",
+                        url: `https://api.erx.staging.nowna.com.ph/confirm?token=${token}`,
                         data: formData,
                         headers: { "Content-Type": "multipart/form-data" },
                       })
