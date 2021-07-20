@@ -246,6 +246,8 @@ class Feedback extends Component {
 
                       formData.append("data", JSON.stringify(buildedFormData));
 
+                      console.log("nnn", additionalFiles);
+
                       additionalFiles.forEach((file) => {
                         formData.append("files[additionalAttachments]", file);
                       });
@@ -313,7 +315,7 @@ class Feedback extends Component {
                           };
                           reader.onload = () => {
                             const blob = dataURItoBlob(reader.result);
-                            this.setState({ additionalFiles: blob });
+                            this.setState({ additionalFiles: [blob] });
                           };
                           reader.readAsDataURL(target.files[0]);
                         }}
