@@ -265,8 +265,8 @@ class Feedback extends Component {
                       <Form.Label>Upload File</Form.Label>
                       <Form.Control
                         type="file"
-                        onChange={(data) => {
-                          this.setState({ additionalFiles: data });
+                        onChange={({ target }) => {
+                          this.setState({ additionalFiles: target.files });
                         }}
                       />
                       <Button size="sm" type="submit">
