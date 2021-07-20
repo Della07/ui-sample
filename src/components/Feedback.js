@@ -221,7 +221,7 @@ class Feedback extends Component {
                   </Form>
                   <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Upload File</Form.Label>
-                    <Form.Control type="file" capture={false} />
+                    <Form.Control type="file" multiple />
                   </Form.Group>
                   <Alert variant="secondary" className="p-3 mt-5">
                     <Row>
