@@ -228,36 +228,35 @@ class Feedback extends Component {
                   </Form>
                   <Form
                     onSubmit={(e) => {
-                      // const { additionalAttachments, token, ...data } = {
-                      //   token: Buffer.from(
-                      //     JSON.stringify({
-                      //       id: "60cbf80fb9c02a46d721b19b",
-                      //       code: "C5AV5N",
-                      //     })
-                      //   ).toString("base64"),
-                      //   additionalAttachments: [payload],
-                      // };
-
-                      // const buildedFormData = { code: data.code };
-
-                      // const formData = new FormData();
-
-                      // formData.append("data", JSON.stringify(buildedFormData));
-
-                      // additionalAttachments.forEach(async (file) => {
-                      //   formData.append("files[additionalAttachments]", file);
-                      // });
-
-                      // return fetch(
-                      //   "https://api.erx.staging.nowna.com.ph/confirm",
-                      //   {
-                      //     method: "PUT",
-                      //     body: formData,
-                      //     headers: { "Content-Type": "multipart/form-data" },
-                      //   }
-                      // );
-
                       e.preventDefault();
+                      const { additionalAttachments, token, ...data } = {
+                        token: Buffer.from(
+                          JSON.stringify({
+                            id: "60cbf80fb9c02a46d721b19b",
+                            code: "C5AV5N",
+                          })
+                        ).toString("base64"),
+                        additionalAttachments: this.additionalAttachments,
+                      };
+
+                      const buildedFormData = { code: data.code };
+
+                      const formData = new FormData();
+
+                      formData.append("data", JSON.stringify(buildedFormData));
+
+                      additionalAttachments.forEach(async (file) => {
+                        formData.append("files[additionalAttachments]", file);
+                      });
+
+                      return fetch(
+                        "https://api.erx.staging.nowna.com.ph/confirm",
+                        {
+                          method: "PUT",
+                          body: formData,
+                          headers: { "Content-Type": "multipart/form-data" },
+                        }
+                      );
                     }}
                     method="put"
                     enctype="multipart/form-data"
@@ -328,6 +327,9 @@ class Feedback extends Component {
                         }}
                       >
                         Upload
+                      </Button>
+                      <Button size="sm" type="submit">
+                        Submit
                       </Button>
                     </Form.Group>
                   </Form>
