@@ -253,12 +253,11 @@ class Feedback extends Component {
                       });
 
                       return fetch(
-                        "https://api.erx.staging.nowna.com.ph/confirm",
+                        `https://api.erx.staging.nowna.com.ph/confirm?token=${token}`,
                         {
                           method: "PUT",
                           body: formData,
-                          headers: { "Content-Type": "multipart/form-data" },
-                          params: { token },
+                          // headers: { "Content-Type": "multipart/form-data" },
                         }
                       );
                     }}
