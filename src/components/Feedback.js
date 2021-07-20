@@ -230,17 +230,20 @@ class Feedback extends Component {
                   <Form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      const { token } = {
-                        // token: Buffer.from(
-                        //   JSON.stringify({
-                        //     id: "60cbf80fb9c02a46d721b19b",
-                        //     code: "C5AV5N",
-                        //   })
-                        // ).toString("base64"),
-                        // additionalAttachments: this.additionalAttachments,
-                        token:
-                          "yJpZCI6IjYwY2JmODBmYjljMDJhNDZkNzIxYjE5YiIsImNvZGUiOiJDNUFWNU4ifQ%3D%3D",
-                      };
+                      // const { token } = {
+                      //   // token: Buffer.from(
+                      //   //   JSON.stringify({
+                      //   //     id: "60cbf80fb9c02a46d721b19b",
+                      //   //     code: "C5AV5N",
+                      //   //   })
+                      //   // ).toString("base64"),
+                      //   // additionalAttachments: this.additionalAttachments,
+                      //   token:
+                      //     "yJpZCI6IjYwY2JmODBmYjljMDJhNDZkNzIxYjE5YiIsImNvZGUiOiJDNUFWNU4ifQ%3D%3D",
+                      // };
+
+                      const token =
+                        "yJpZCI6IjYwY2JmODBmYjljMDJhNDZkNzIxYjE5YiIsImNvZGUiOiJDNUFWNU4ifQ%3D%3D";
 
                       const buildedFormData = {
                         code: "C5AV5N",
@@ -271,8 +274,8 @@ class Feedback extends Component {
                         }
                       );
                     }}
-                    method="put"
-                    enctype="multipart/form-data"
+                    // method="put"
+                    // enctype="multipart/form-data"
                   >
                     <Form.Group controlId="formFile" className="mb-3">
                       <Form.Label>Upload File</Form.Label>
