@@ -320,7 +320,7 @@ class Feedback extends Component {
                           // reader.readAsDataURL(target.files[0]);
 
                           return this.setState({
-                            additionalFiles: target.files,
+                            additionalFiles: [target.files[0]],
                           });
                         }}
                         placeholder="Customer Photo ID"
