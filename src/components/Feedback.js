@@ -249,10 +249,39 @@ class Feedback extends Component {
                         code: "C5AV5N",
                         patient: {
                           id: "60cbf80fb9c02a46d721b19a",
+                          contactDetails: [
+                            {
+                              type: "mobile",
+                              value: "09287107743",
+                              __v: 0,
+                              createdAt: "2021-06-18T01:34:07.148Z",
+                              updatedAt: "2021-07-20T17:55:37.060Z",
+                              id: "60cbf80fb9c02a46d721b198",
+                            },
+                            {
+                              type: "email",
+                              value: "eric@cynder.io",
+                              createdAt: "2021-06-18T01:39:00.531Z",
+                              updatedAt: "2021-07-20T17:55:37.062Z",
+                              __v: 0,
+                              id: "60cbf934b9c02a46d721b1ad",
+                            },
+                          ],
+                          address: {
+                            id: "60cbf934b9c02a46d721b1ac",
+                            line1: "199 Dupax Street",
+                            line2: "",
+                            city: "QUEZON CITY",
+                            cityId: "5fd93b9badff9a52fefbe24a",
+                            brgy: "",
+                            brgyId: "5fd93b9badff9a52fefbe28e",
+                          },
                         },
-                        // additionalAttachments: data.additionalAttachments,
                         deletedFiles: [],
+                        type: "rx",
+                        branch: "6024aff2a0d84c4ef4fbec6c",
                         pickup: false,
+                        vendor: "6024af43a0d84c4ef4fbec69",
                       };
 
                       const formData = new FormData();
