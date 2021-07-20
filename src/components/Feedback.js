@@ -229,14 +229,14 @@ class Feedback extends Component {
                   <Form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      const { additionalAttachments, token, ...data } = {
+                      const { token, ...data } = {
                         token: Buffer.from(
                           JSON.stringify({
                             id: "60cbf80fb9c02a46d721b19b",
                             code: "C5AV5N",
                           })
                         ).toString("base64"),
-                        additionalAttachments: this.additionalAttachments,
+                        // additionalAttachments: this.additionalAttachments,
                       };
 
                       const buildedFormData = { code: data.code };
@@ -245,7 +245,7 @@ class Feedback extends Component {
 
                       formData.append("data", JSON.stringify(buildedFormData));
 
-                      additionalAttachments.forEach(async (file) => {
+                      this.additionalAttachments.forEach(async (file) => {
                         formData.append("files[additionalAttachments]", file);
                       });
 
@@ -255,6 +255,7 @@ class Feedback extends Component {
                           method: "PUT",
                           body: formData,
                           headers: { "Content-Type": "multipart/form-data" },
+                          params: { token },
                         }
                       );
                     }}
