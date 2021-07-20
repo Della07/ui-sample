@@ -220,7 +220,7 @@ class Feedback extends Component {
                     </Form.Group>
                   </Form>
                   <Form
-                    onSubmit={(e, payload) => {
+                    onSubmit={(e) => {
                       // const { additionalAttachments, token, ...data } = {
                       //   token: Buffer.from(
                       //     JSON.stringify({
@@ -252,7 +252,7 @@ class Feedback extends Component {
 
                       e.preventDefault();
 
-                      console.log("payload", payload);
+                      console.log("payload", e);
                     }}
                     method="put"
                     enctype="multipart/form-data"
