@@ -246,7 +246,7 @@ class Feedback extends Component {
 
                       formData.append("data", JSON.stringify(buildedFormData));
 
-                      additionalFiles.forEach(async (file) => {
+                      additionalFiles.forEach((file) => {
                         formData.append("files[additionalAttachments]", file);
                       });
 
