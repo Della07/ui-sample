@@ -17,7 +17,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class Feedback extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { additionalFiles: [] };
+  }
+
   render() {
+    console.log("rrr", this.state);
     return (
       <Accordion defaultActiveKey="0">
         <Card className="border-0 rounded-0">
@@ -251,15 +257,18 @@ class Feedback extends Component {
                       // );
 
                       e.preventDefault();
-
-                      console.log("payload", e.target.value);
                     }}
                     method="put"
                     enctype="multipart/form-data"
                   >
                     <Form.Group controlId="formFile" className="mb-3">
                       <Form.Label>Upload File</Form.Label>
-                      <Form.Control type="file" />
+                      <Form.Control
+                        type="file"
+                        onChange={(data) => {
+                          this.setState({ additionalFiles: data });
+                        }}
+                      />
                       <Button size="sm" type="submit">
                         Upload
                       </Button>
