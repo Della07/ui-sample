@@ -231,13 +231,15 @@ class Feedback extends Component {
                     onSubmit={(e) => {
                       e.preventDefault();
                       const { token, ...data } = {
-                        token: Buffer.from(
-                          JSON.stringify({
-                            id: "60cbf80fb9c02a46d721b19b",
-                            code: "C5AV5N",
-                          })
-                        ).toString("base64"),
+                        // token: Buffer.from(
+                        //   JSON.stringify({
+                        //     id: "60cbf80fb9c02a46d721b19b",
+                        //     code: "C5AV5N",
+                        //   })
+                        // ).toString("base64"),
                         // additionalAttachments: this.additionalAttachments,
+                        token:
+                          "yJpZCI6IjYwY2JmODBmYjljMDJhNDZkNzIxYjE5YiIsImNvZGUiOiJDNUFWNU4ifQ%3D%3D",
                       };
 
                       const buildedFormData = { code: data.code };
