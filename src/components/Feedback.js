@@ -220,8 +220,8 @@ class Feedback extends Component {
                     </Form.Group>
                   </Form>
                   <Form
-                    action="https://www.google.com/"
-                    method="post"
+                    action="https://api.erx.staging.nowna.com.ph/confirm"
+                    method="put"
                     enctype="multipart/form-data"
                   >
                     <Form.Group controlId="formFile" className="mb-3">
