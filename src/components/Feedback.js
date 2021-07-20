@@ -230,7 +230,7 @@ class Feedback extends Component {
                   <Form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      const { token, ...data } = {
+                      const { token } = {
                         // token: Buffer.from(
                         //   JSON.stringify({
                         //     id: "60cbf80fb9c02a46d721b19b",
@@ -242,7 +242,15 @@ class Feedback extends Component {
                           "yJpZCI6IjYwY2JmODBmYjljMDJhNDZkNzIxYjE5YiIsImNvZGUiOiJDNUFWNU4ifQ%3D%3D",
                       };
 
-                      const buildedFormData = { code: data.code };
+                      const buildedFormData = {
+                        code: "C5AV5N",
+                        patient: {
+                          id: "60cbf80fb9c02a46d721b19a",
+                        },
+                        // additionalAttachments: data.additionalAttachments,
+                        deletedFiles: [],
+                        pickup: false,
+                      };
 
                       const formData = new FormData();
 
