@@ -220,35 +220,39 @@ class Feedback extends Component {
                     </Form.Group>
                   </Form>
                   <Form
-                    onSubmit={(payload) => {
-                      const { additionalAttachments, token, ...data } = {
-                        token: Buffer.from(
-                          JSON.stringify({
-                            id: "60cbf80fb9c02a46d721b19b",
-                            code: "C5AV5N",
-                          })
-                        ).toString("base64"),
-                        additionalAttachments: [payload],
-                      };
+                    onSubmit={(e, payload) => {
+                      // const { additionalAttachments, token, ...data } = {
+                      //   token: Buffer.from(
+                      //     JSON.stringify({
+                      //       id: "60cbf80fb9c02a46d721b19b",
+                      //       code: "C5AV5N",
+                      //     })
+                      //   ).toString("base64"),
+                      //   additionalAttachments: [payload],
+                      // };
 
-                      const buildedFormData = { code: data.code };
+                      // const buildedFormData = { code: data.code };
 
-                      const formData = new FormData();
+                      // const formData = new FormData();
 
-                      formData.append("data", JSON.stringify(buildedFormData));
+                      // formData.append("data", JSON.stringify(buildedFormData));
 
-                      additionalAttachments.forEach(async (file) => {
-                        formData.append("files[additionalAttachments]", file);
-                      });
+                      // additionalAttachments.forEach(async (file) => {
+                      //   formData.append("files[additionalAttachments]", file);
+                      // });
 
-                      return fetch(
-                        "https://api.erx.staging.nowna.com.ph/confirm",
-                        {
-                          method: "PUT",
-                          body: formData,
-                          headers: { "Content-Type": "multipart/form-data" },
-                        }
-                      );
+                      // return fetch(
+                      //   "https://api.erx.staging.nowna.com.ph/confirm",
+                      //   {
+                      //     method: "PUT",
+                      //     body: formData,
+                      //     headers: { "Content-Type": "multipart/form-data" },
+                      //   }
+                      // );
+
+                      e.preventDefault();
+
+                      console.log("payload", payload);
                     }}
                     method="put"
                     enctype="multipart/form-data"
