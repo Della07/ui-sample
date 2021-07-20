@@ -19,6 +19,7 @@ import {
 class Feedback extends Component {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
     this.state = { additionalFiles: [] };
   }
 
@@ -263,13 +264,36 @@ class Feedback extends Component {
                   >
                     <Form.Group controlId="formFile" className="mb-3">
                       <Form.Label>Upload File</Form.Label>
-                      <Form.Control
+                      {/* <Form.Control
                         type="file"
                         onChange={({ target }) => {
                           this.setState({ additionalFiles: target.files });
                         }}
+                      /> */}
+                      <input
+                        ref={this.myRef}
+                        Tell
+                        fluid
+                        hidden
+                        location
+                        max={3}
+                        maxLength={3}
+                        multiple
+                        name="customerPhotoId"
+                        onChange={({ target }) => {
+                          this.setState({ additionalFiles: target.files });
+                        }}
+                        placeholder="Customer Photo ID"
+                        type="file"
+                        us
+                        your
                       />
-                      <Button size="sm" type="submit">
+                      <Button
+                        size="sm"
+                        onClick={() => {
+                          this.myRef.current.click();
+                        }}
+                      >
                         Upload
                       </Button>
                     </Form.Group>
