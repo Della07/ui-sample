@@ -281,7 +281,12 @@ class Feedback extends Component {
                         multiple
                         name="customerPhotoId"
                         onChange={({ target }) => {
-                          this.setState({ additionalFiles: target.files });
+                          const reader = new FileReader();
+                          reader.onload = () => {
+                            const blob = window.dataURLtoBlob(reader.result);
+                            this.setState({ additionalFiles: blob });
+                          };
+                          reader.readAsDataURL(target.files[0]);
                         }}
                         placeholder="Customer Photo ID"
                         type="file"
