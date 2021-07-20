@@ -252,7 +252,7 @@ class Feedback extends Component {
 
                       e.preventDefault();
 
-                      console.log("payload", e);
+                      console.log("payload", e.target);
                     }}
                     method="put"
                     enctype="multipart/form-data"
