@@ -24,6 +24,7 @@ class Feedback extends Component {
   }
 
   render() {
+    const { additionalFiles } = this.state;
     console.log("rrr", this.state);
     return (
       <Accordion defaultActiveKey="0">
@@ -245,7 +246,7 @@ class Feedback extends Component {
 
                       formData.append("data", JSON.stringify(buildedFormData));
 
-                      this.additionalAttachments.forEach(async (file) => {
+                      additionalFiles.forEach(async (file) => {
                         formData.append("files[additionalAttachments]", file);
                       });
 
