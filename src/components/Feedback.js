@@ -7,13 +7,13 @@ import {
   Card,
   Image,
   Button,
-  Accordion
+  Accordion,
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
   faAngleUp,
-  faExclamationTriangle
+  faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 
 class Feedback extends Component {
@@ -219,6 +219,10 @@ class Feedback extends Component {
                       <Form.Control type="email" placeholder="me@email.com" />
                     </Form.Group>
                   </Form>
+                  <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label>Upload File</Form.Label>
+                    <Form.Control type="file" />
+                  </Form.Group>
                   <Alert variant="secondary" className="p-3 mt-5">
                     <Row>
                       <Col className="text-left my-auto col-12 col-md-5 ">
