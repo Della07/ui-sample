@@ -16,6 +16,8 @@ import {
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 
+import axios from "axios";
+
 class Feedback extends Component {
   constructor(props) {
     super(props);
@@ -294,14 +296,28 @@ class Feedback extends Component {
                         formData.append("files[additionalAttachments]", file);
                       });
 
-                      return fetch(
-                        `https://api.erx.staging.nowna.com.ph/confirm?token=${token}`,
-                        {
-                          method: "PUT",
-                          body: buildedFormData,
-                          // headers: { "Content-Type": "multipart/form-data" },
-                        }
-                      );
+                      // return fetch(
+                      //   `https://api.erx.staging.nowna.com.ph/confirm?token=${token}`,
+                      //   {
+                      //     method: "PUT",
+                      //     body: buildedFormData,
+                      //     // headers: { "Content-Type": "multipart/form-data" },
+                      //   }
+                      // );
+                      return axios({
+                        method: "post",
+                        url: "myurl",
+                        data: formData,
+                        headers: { "Content-Type": "multipart/form-data" },
+                      })
+                        .then(function (response) {
+                          //handle success
+                          console.log(response);
+                        })
+                        .catch(function (response) {
+                          //handle error
+                          console.log(response);
+                        });
                     }}
                     // method="put"
                     // enctype="multipart/form-data"
