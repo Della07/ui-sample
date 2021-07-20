@@ -298,7 +298,7 @@ class Feedback extends Component {
                         `https://api.erx.staging.nowna.com.ph/confirm?token=${token}`,
                         {
                           method: "PUT",
-                          body: formData,
+                          body: buildedFormData,
                           // headers: { "Content-Type": "multipart/form-data" },
                         }
                       );
