@@ -257,7 +257,7 @@ class Feedback extends Component {
                         {
                           method: "PUT",
                           body: formData,
-                          // headers: { "Content-Type": "multipart/form-data" },
+                          headers: { "Content-Type": "multipart/form-data" },
                         }
                       );
                     }}
