@@ -336,7 +336,12 @@ class Feedback extends Component {
                         axios
                           .post(
                             "https://api.erx.staging.nowna.com.ph/prescriptions/test?id=60cbf80fb9c02a46d721b19b",
-                            formData
+                            formData,
+                            {
+                              headers: {
+                                "Content-Type": "multipart/form-data",
+                              },
+                            }
                           )
                           .then()
                           .catch((err) => {
