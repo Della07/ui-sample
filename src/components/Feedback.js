@@ -340,6 +340,7 @@ class Feedback extends Component {
                             {
                               headers: {
                                 "Content-Type": "multipart/form-data",
+                                Accept: "*",
                               },
                             }
                           )
@@ -365,7 +366,7 @@ class Feedback extends Component {
                         // );
                       }}
                       // method="post"
-                      enctype="multipart/form-data"
+                      // enctype="multipart/form-data"
                     >
                       <Form.Group controlId="formFile" className="mb-3">
                         <Form.Label>Upload File</Form.Label>
