@@ -376,7 +376,6 @@ class Feedback extends Component {
                         }}
                       /> */}
                         <input
-                          capture
                           ref={this.myRef}
                           Tell
                           fluid
