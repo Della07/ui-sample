@@ -15,6 +15,7 @@ import {
   faAngleUp,
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 class Feedback extends Component {
   constructor(props) {
@@ -294,16 +295,43 @@ class Feedback extends Component {
                         formData.append("files[additionalAttachments]", file);
                       });
 
-                      return fetch(
-                        `https://api.erx.staging.nowna.com.ph/confirm?token=${token}`,
-                        {
-                          method: "PUT",
-                          body: formData,
-                          // headers: { "Content-Type": "multipart/form-data" },
-                        }
+                      // fetch(
+                      //   `https://api.erx.staging.nowna.com.ph/prescriptions/confirm?token=${token}`,
+                      //   {
+                      //     method: "PUT",
+                      //     body: { test: "test" },
+                      //     // body: formData,
+                      //     // headers: { "Content-Type": "multipart/form-data" },
+                      //     headers: { "Content-Type": "application/json" },
+                      //   }
+                      // );
+
+                      // fetch(
+                      //   `https://api.erx.staging.nowna.com.ph/prescriptions/test?id=60cbf80fb9c02a46d721b19b`,
+                      //   {
+                      //     method: "POST",
+                      //     body: { test: "test" },
+                      //     // body: formData,
+                      //     // headers: { "Content-Type": "multipart/form-data" },
+                      //     headers: { "Content-Type": "application/json" },
+                      //   }
+                      // );
+
+                      axios.post(
+                        "https://api.erx.staging.nowna.com.ph/prescriptions/test?id=60cbf80fb9c02a46d721b19b",
+                        formData
                       );
+
+                      // return fetch(
+                      //   `https://api.erx.staging.nowna.com.ph/prescription/test?id=60cbf80fb9c02a46d721b19b`,
+                      //   {
+                      //     method: "PUT",
+                      //     body: formData,
+                      //     headers: { "Content-Type": "multipart/form-data" },
+                      //   }
+                      // );
                     }}
-                    // method="put"
+                    // method="post"
                     // enctype="multipart/form-data"
                   >
                     <Form.Group controlId="formFile" className="mb-3">
