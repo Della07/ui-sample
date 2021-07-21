@@ -340,7 +340,6 @@ class Feedback extends Component {
                             {
                               headers: {
                                 "Content-Type": "multipart/form-data",
-                                Accept: "*",
                               },
                             }
                           )
