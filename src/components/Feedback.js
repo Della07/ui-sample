@@ -485,7 +485,9 @@ class Feedback extends Component {
         </Accordion>
         <Toast
           show={this.state.show}
-          onClose={this.setState({ show: !this.state.show })}
+          onClose={() => {
+            this.setState({ show: !this.state.show });
+          }}
         >
           <Toast.Header>
             <img
