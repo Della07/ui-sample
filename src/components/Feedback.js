@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   Accordion,
+  Toast,
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -21,12 +22,26 @@ class Feedback extends Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
-    this.state = { additionalFiles: [] };
+    this.state = { additionalFiles: [], error: null, show: false };
   }
 
   render() {
     const { additionalFiles } = this.state;
     console.log("rrr", this.state);
+
+    const toast = (error) => (
+      <Toast
+        show={this.state.show}
+        onClose={this.setState({ show: !this.state.show })}
+      >
+        <Toast.Header>
+          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+          <strong className="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+        </Toast.Header>
+        <Toast.Body>{error}</Toast.Body>
+      </Toast>
+    );
     return (
       <Accordion defaultActiveKey="0">
         <Card className="border-0 rounded-0">
@@ -317,10 +332,22 @@ class Feedback extends Component {
                       //   }
                       // );
 
-                      axios.post(
-                        "https://api.erx.staging.nowna.com.ph/prescriptions/test?id=60cbf80fb9c02a46d721b19b",
-                        formData
-                      );
+                      axios
+                        .post(
+                          "https://api.erx.staging.nowna.com.ph/prescriptions/test?id=60cbf80fb9c02a46d721b19b",
+                          formData
+                        )
+                        .then()
+                        .catch((err) => {
+                          const error =
+                            err &&
+                            typeof err === "object" &&
+                            JSON.stringify(err);
+
+                          if (error) {
+                            this.setState({ error, show: true });
+                          }
+                        });
 
                       // return fetch(
                       //   `https://api.erx.staging.nowna.com.ph/prescription/test?id=60cbf80fb9c02a46d721b19b`,
