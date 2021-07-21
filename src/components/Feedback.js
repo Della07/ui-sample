@@ -308,7 +308,13 @@ class Feedback extends Component {
                         console.log("nnn", additionalFiles);
 
                         additionalFiles.forEach((file) => {
-                          formData.append("files[additionalAttachments]", file);
+                          const base64 = Buffer.from(
+                            JSON.stringify(file)
+                          ).toString("base64");
+                          formData.append(
+                            "files[additionalAttachments]",
+                            base64
+                          );
                         });
 
                         // fetch(
